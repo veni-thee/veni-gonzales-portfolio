@@ -69,6 +69,17 @@ img {
   min-width: 0;
 }
 
+.sf-navbar--fade-brand .sf-brand {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.sf-navbar--fade-brand.is-scrolled .sf-brand {
+  opacity: 1;
+  visibility: visible;
+}
+
 .sf-brand-name {
   white-space: nowrap;
   overflow: hidden;
@@ -233,7 +244,6 @@ img {
   border-radius: 1rem;
   box-shadow: var(--sf-shadow-lg);
   padding: 2rem;
-  margin-top: 2rem;
   position: relative;
   z-index: 2;
   display: grid;
@@ -983,6 +993,10 @@ body.nonwork-body {
 .sf-page-bg-wrap > .sf-container {
   position: relative;
   z-index: 1;
+}
+
+.sf-container--spaced {
+  padding-top: 2rem;
 }
 
 .sf-page-bg-wrap .sf-section-title {

@@ -62,4 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  var fadeNavbar = document.querySelector(".sf-navbar--fade-brand");
+  if (fadeNavbar) {
+    var updateFadeNavbar = function () {
+      fadeNavbar.classList.toggle("is-scrolled", window.scrollY > 120);
+    };
+    window.addEventListener("scroll", updateFadeNavbar);
+    updateFadeNavbar();
+  }
 });
