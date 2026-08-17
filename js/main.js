@@ -7,16 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  document.querySelectorAll(".sf-accordion-trigger").forEach(function (trigger) {
+  document.querySelectorAll("[data-modal-open]").forEach(function (trigger) {
     trigger.addEventListener("click", function () {
-      var item = trigger.closest(".sf-accordion-item");
-      var wasOpen = item.classList.contains("is-open");
-      item.parentElement.querySelectorAll(".sf-accordion-item").forEach(function (i) {
-        i.classList.remove("is-open");
-      });
-      if (!wasOpen) {
-        item.classList.add("is-open");
+      var modal = document.getElementById(trigger.dataset.modalOpen);
+      if (modal) {
+        modal.classList.add("is-open");
       }
     });
+  });
+
+  document.querySelectorAll("[data-modal-close]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      el.closest(".sf-modal-wrap").classList.remove("is-open");
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      document.querySelectorAll(".sf-modal-wrap.is-open").forEach(function (modal) {
+        modal.classList.remove("is-open");
+      });
+    }
   });
 });

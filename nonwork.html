@@ -13,6 +13,7 @@
 
   <link href="https://unpkg.com/@salesforce-ux/design-system@2.264.0/assets/styles/salesforce-lightning-design-system.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -32,78 +33,130 @@
     </div>
   </nav>
 
-  <header class="sf-page-header">
+  <header class="sf-page-header sf-space-header">
     <div class="sf-page-header-inner">
-      <p class="sf-eyebrow">Beyond the Job Title</p>
-      <h1>Values, Beliefs &amp; Hobbies</h1>
-      <p class="sf-subtitle">A bit about what drives me and what I do when I'm not building on Salesforce.</p>
+      <p class="sf-eyebrow animate__animated animate__fadeInDown">Beyond the Job Title</p>
+      <h1 class="animate__animated animate__fadeInUp">Values, Beliefs &amp; Hobbies</h1>
+      <p class="sf-subtitle animate__animated animate__fadeInUp animate__delay-1s">A bit about what drives me and what I do when I'm not building on Salesforce. Click a planet to explore.</p>
     </div>
   </header>
 
   <div class="sf-container">
     <section class="sf-section">
-
-      <div class="sf-accordion-item is-open">
-        <button class="sf-accordion-trigger" type="button">
-          <span><i class="fa fa-graduation-cap"></i> Continuous Learning</span>
-          <i class="fa fa-chevron-down sf-chevron"></i>
+      <div class="sf-orbit">
+        <button class="sf-orbit-item" type="button" data-modal-open="modal-learning">
+          <img class="sf-floating animate__animated animate__fadeInDown" style="animation-delay:.1s;" src="images/moon.png" alt="Moon">
+          <span>Continuous Learning</span>
         </button>
-        <div class="sf-accordion-panel">
-          <p>I believe in the importance of continuous learning. I'm mainly interested in Web Development / App Development, IoT (Internet of Things), and Process Improvement — I believe that knowledge in these areas helps us achieve great things.</p>
-        </div>
+        <button class="sf-orbit-item" type="button" data-modal-open="modal-quote">
+          <img class="sf-floating animate__animated animate__fadeInDown" style="animation-delay:.25s;" src="images/star.png" alt="Star">
+          <span>Favorite Quote</span>
+        </button>
+        <button class="sf-orbit-item" type="button" data-modal-open="modal-balance">
+          <img class="sf-floating animate__animated animate__fadeInDown" style="animation-delay:.4s;" src="images/planet2.png" alt="Planet">
+          <span>Work-Life Balance</span>
+        </button>
+        <button class="sf-orbit-item" type="button" data-modal-open="modal-hobbies">
+          <img class="sf-floating animate__animated animate__fadeInDown" style="animation-delay:.55s;" src="images/planet3.png" alt="Planet">
+          <span>Hobbies</span>
+        </button>
+        <button class="sf-orbit-item" type="button" data-modal-open="modal-contact">
+          <img class="sf-floating animate__animated animate__fadeInDown" style="animation-delay:.7s;" src="images/spaceship.png" alt="Spaceship">
+          <span>Contact Me</span>
+        </button>
       </div>
+    </section>
+  </div>
 
-      <div class="sf-accordion-item">
-        <button class="sf-accordion-trigger" type="button">
-          <span><i class="fa fa-quote-left"></i> Favorite Quote &amp; Work Mantra</span>
-          <i class="fa fa-chevron-down sf-chevron"></i>
-        </button>
-        <div class="sf-accordion-panel">
-          <p>"Be kind and be useful."<br>— Barack Obama</p>
-        </div>
+  <!-- Modal: Continuous Learning -->
+  <div class="sf-modal-wrap" id="modal-learning">
+    <div class="sf-modal-backdrop" data-modal-close></div>
+    <div class="sf-modal" role="dialog" aria-modal="true" aria-labelledby="modal-learning-title">
+      <button class="sf-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 class="sf-modal-title" id="modal-learning-title">My Professional Interests</h2>
+      <div class="sf-modal-body">
+        <p>I believe in the importance of continuous learning. I'm mainly interested in Web Development / App Development, IoT (Internet of Things), and Process Improvement — I believe that knowledge in these areas helps us achieve great things.</p>
       </div>
+    </div>
+  </div>
 
-      <div class="sf-accordion-item">
-        <button class="sf-accordion-trigger" type="button">
-          <span><i class="fa fa-balance-scale"></i> Work-Life Balance</span>
-          <i class="fa fa-chevron-down sf-chevron"></i>
-        </button>
-        <div class="sf-accordion-panel">
-          <p>Work-life balance advocate and practitioner. I've been working remotely since 2015 and believe that sustainable, well-paced work leads to better outcomes — for the project and for the person doing it.</p>
-        </div>
+  <!-- Modal: Favorite Quote -->
+  <div class="sf-modal-wrap" id="modal-quote">
+    <div class="sf-modal-backdrop" data-modal-close></div>
+    <div class="sf-modal" role="dialog" aria-modal="true" aria-labelledby="modal-quote-title">
+      <button class="sf-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 class="sf-modal-title" id="modal-quote-title">My Favorite Quote &amp; Work Mantra</h2>
+      <div class="sf-modal-body text-center">
+        <p style="font-size:1.15rem; font-style:italic;">"Be kind and be useful."</p>
+        <p style="font-weight:700;">— Barack Obama</p>
       </div>
+    </div>
+  </div>
 
-      <div class="sf-accordion-item">
-        <button class="sf-accordion-trigger" type="button">
-          <span><i class="fa fa-heart"></i> Hobbies &amp; Other Interests</span>
-          <i class="fa fa-chevron-down sf-chevron"></i>
-        </button>
-        <div class="sf-accordion-panel">
-          <p><strong>TV Shows:</strong> NCIS, Grey's Anatomy, Criminal Minds, Forensic Files, Rick and Morty, and crime documentaries in general.</p>
-          <p><strong>Hobbies:</strong> Poetry, photography, and playing the guitar.</p>
-          <p><em>Disclaimer on my hobbies: I like doing them, but that doesn't mean I'm actually good at them.</em></p>
-          <div class="sf-grid-2" style="max-width:360px; margin-top:1rem;">
-            <img src="images/tv.png" alt="TV shows" style="width:5rem; margin:0 auto;">
-            <img src="images/arts.png" alt="Arts and crafts" style="width:5rem; margin:0 auto;">
+  <!-- Modal: Work-Life Balance -->
+  <div class="sf-modal-wrap" id="modal-balance">
+    <div class="sf-modal-backdrop" data-modal-close></div>
+    <div class="sf-modal" role="dialog" aria-modal="true" aria-labelledby="modal-balance-title">
+      <button class="sf-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 class="sf-modal-title" id="modal-balance-title">Work-Life Balance</h2>
+      <div class="sf-modal-body">
+        <p>Work-life balance advocate and practitioner. I've been working remotely since 2015 and believe that sustainable, well-paced work leads to better outcomes — for the project and for the person doing it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Hobbies -->
+  <div class="sf-modal-wrap" id="modal-hobbies">
+    <div class="sf-modal-backdrop" data-modal-close></div>
+    <div class="sf-modal" role="dialog" aria-modal="true" aria-labelledby="modal-hobbies-title">
+      <button class="sf-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 class="sf-modal-title" id="modal-hobbies-title">Other Stuff</h2>
+      <div class="sf-modal-body text-center">
+        <p>Here are some of my other interests outside of work:</p>
+        <img class="sf-modal-media" src="images/tv.png" alt="TV">
+        <p><strong>TV Shows:</strong><br>NCIS, Grey's Anatomy, Criminal Minds, Forensic Files,<br>Rick and Morty, and crime documentaries in general.</p>
+        <img class="sf-modal-media" src="images/arts.png" alt="Arts and Crafts">
+        <p><strong>Hobbies:</strong><br>Poetry, Photography, Playing the guitar</p>
+        <p><em style="font-size:.85rem;">**Disclaimer on my hobbies: I like doing it, but that doesn't mean I'm actually good at it.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Contact -->
+  <div class="sf-modal-wrap" id="modal-contact">
+    <div class="sf-modal-backdrop" data-modal-close></div>
+    <div class="sf-modal sf-modal--dark" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
+      <button class="sf-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <h2 class="sf-modal-title" id="modal-contact-title">Take me to your leader!</h2>
+      <div class="sf-modal-body">
+        <form action="https://formsubmit.co/venidigonzales@rocketmail.com" method="POST">
+          <div class="sf-form-group">
+            <label for="nw-email">Email address</label>
+            <input class="sf-input" type="email" name="email" id="nw-email" placeholder="you@example.com" required>
           </div>
-        </div>
+          <input type="hidden" name="_next" value="https://veni-thee.github.io/veni-gonzales-portfolio/thank-you.html">
+          <div class="sf-form-group">
+            <label for="nw-subject">Subject</label>
+            <input class="sf-input" type="text" name="_subject" id="nw-subject" placeholder="Subject" autocomplete="off">
+          </div>
+          <div class="sf-form-group">
+            <label for="nw-message">Message</label>
+            <textarea class="sf-textarea" name="message" id="nw-message" rows="3" placeholder="Your message here" required></textarea>
+          </div>
+          <input type="hidden" name="_captcha" value="false">
+          <button type="submit" class="sf-btn sf-btn--brand"><i class="fa fa-paper-plane"></i> Send Message</button>
+          <p style="margin-top:1rem; font-size:.85rem;">
+            <i class="fa fa-phone me-2"></i> +63-929-437-9460<br>
+            <i class="fa fa-envelope-o me-2"></i> veni@stratuscarta.com
+          </p>
+        </form>
       </div>
-
-    </section>
-
-    <section class="sf-section text-center">
-      <div class="sf-card sf-card--elevated" style="max-width:520px; margin:0 auto;">
-        <h3 style="margin-top:0; color:var(--sf-blue-dark);">Take me to your leader!</h3>
-        <p style="color:var(--sf-gray);">Let's connect — I'd love to hear from you.</p>
-        <a class="sf-btn sf-btn--brand" href="index.html#contact"><i class="fa fa-envelope-o"></i> Get in Touch</a>
-      </div>
-    </section>
+    </div>
   </div>
 
   <footer class="sf-footer">
     <div class="sf-footer-links">
       <a href="https://www.linkedin.com/in/veni-di-gonzales-6a3a1058/" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
-      <a href="https://github.com/veni-thee" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
     </div>
     <small>&copy; 2026 Veni Di Gonzales. All rights reserved.</small>
   </footer>

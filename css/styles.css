@@ -782,3 +782,186 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
+
+/* ---------- Floating / space-theme decoration ---------- */
+
+@keyframes sf-floating {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, 18px); }
+  100% { transform: translate(0, 0px); }
+}
+
+.sf-floating {
+  animation-name: sf-floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.sf-astro-wrap {
+  position: relative;
+  text-align: center;
+  margin-bottom: -1.5rem;
+}
+
+.sf-astro {
+  width: 8rem;
+  filter: drop-shadow(0 10px 14px rgba(3, 45, 96, 0.35));
+}
+
+/* Non-Work page: space hero + orbiting, clickable planets */
+
+.sf-space-header {
+  background: linear-gradient(120deg, var(--sf-blue-dark) 0%, #4b1d8f 55%, #b3286e 100%);
+}
+
+.sf-orbit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
+  padding: 1rem 0 2.5rem;
+}
+
+.sf-orbit-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  color: var(--sf-blue-dark);
+}
+
+.sf-orbit-item img {
+  width: 5.5rem;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 6px 10px rgba(3, 45, 96, 0.25));
+}
+
+.sf-orbit-item:hover img {
+  transform: scale(1.12);
+}
+
+.sf-orbit-item span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  background-color: var(--sf-blue-pale);
+  color: var(--sf-blue-dark);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+}
+
+/* Lightweight modal (no framework dependency) */
+
+.sf-modal-wrap {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.sf-modal-wrap.is-open {
+  display: flex;
+}
+
+.sf-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(3, 45, 96, 0.6);
+}
+
+.sf-modal {
+  position: relative;
+  z-index: 1;
+  background: var(--sf-white);
+  border-radius: 1rem;
+  box-shadow: var(--sf-shadow-lg);
+  max-width: 540px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.sf-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--sf-gray);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.sf-modal-close:hover {
+  color: var(--sf-blue-dark);
+}
+
+.sf-modal-title {
+  color: var(--sf-blue-dark);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  padding-right: 1.5rem;
+}
+
+.sf-modal-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.sf-modal-media {
+  width: 100%;
+  max-width: 260px;
+  border-radius: var(--sf-radius);
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.sf-modal--dark {
+  background: linear-gradient(135deg, var(--sf-blue-dark), #4b1d8f);
+  color: var(--sf-white);
+}
+
+.sf-modal--dark .sf-modal-title,
+.sf-modal--dark .sf-modal-body p {
+  color: var(--sf-white);
+}
+
+.sf-modal--dark .sf-modal-close {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sf-modal--dark .sf-modal-close:hover {
+  color: var(--sf-white);
+}
+
+.sf-modal--dark .sf-input,
+.sf-modal--dark .sf-textarea {
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+.sf-modal--dark .sf-form-group label {
+  color: var(--sf-white);
+}
+
+@media (max-width: 600px) {
+  .sf-orbit {
+    gap: 1.5rem;
+  }
+
+  .sf-orbit-item img {
+    width: 4.2rem;
+  }
+}
