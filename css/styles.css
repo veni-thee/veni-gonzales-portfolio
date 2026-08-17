@@ -233,7 +233,7 @@ img {
   border-radius: 1rem;
   box-shadow: var(--sf-shadow-lg);
   padding: 2rem;
-  margin-top: -3.5rem;
+  margin-top: 2rem;
   position: relative;
   z-index: 2;
   display: grid;
