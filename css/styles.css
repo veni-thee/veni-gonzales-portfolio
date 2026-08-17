@@ -858,13 +858,32 @@ body.thank-you-body {
     left: 0;
     right: 0;
     background: var(--sf-blue-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     flex-direction: column;
-    padding: 0.75rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
     display: none;
   }
 
   .sf-navlinks.is-open {
     display: flex;
+  }
+
+  .sf-navlinks li {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .sf-navlinks a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.9rem 1.25rem;
+    margin: 0;
+    font-size: 1rem;
   }
 
   .sf-nav-toggle {
