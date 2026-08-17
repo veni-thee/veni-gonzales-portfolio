@@ -1264,3 +1264,12 @@ body.nonwork-body {
   margin: 0 auto 1.5rem;
   display: block;
 }
+
+.sf-modal-gif {
+  width: 9em;
+  height: 9em;
+  border-radius: 100%;
+  border: none;
+  margin: 0 auto 1rem;
+  display: block;
+}
