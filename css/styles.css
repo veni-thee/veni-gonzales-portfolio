@@ -165,7 +165,6 @@ img {
 .sf-page-header p.sf-subtitle {
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.88);
-  max-width: 640px;
   margin: 0;
 }
 
@@ -189,6 +188,14 @@ img {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+}
+
+.sf-section--center {
+  text-align: center;
+}
+
+.sf-section--center .sf-section-title {
+  justify-content: center;
 }
 
 .sf-section-title::before {
@@ -215,6 +222,8 @@ img {
 
 .sf-card--elevated {
   box-shadow: var(--sf-shadow-lg);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Profile card on About page */
@@ -277,6 +286,7 @@ img {
 .sf-contact-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
@@ -343,6 +353,7 @@ img {
 .sf-btn-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
   margin-top: 1.25rem;
 }
@@ -570,96 +581,6 @@ img {
   gap: 1.25rem;
 }
 
-/* ---------- Projects (personal) ---------- */
-
-.sf-project-card {
-  border-radius: var(--sf-radius);
-  overflow: hidden;
-  box-shadow: var(--sf-shadow);
-  background: var(--sf-white);
-  border: 1px solid #e5e5e5;
-}
-
-.sf-project-card img {
-  width: 100%;
-  display: block;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-}
-
-.sf-project-card-body {
-  padding: 1rem 1.1rem 1.25rem;
-}
-
-.sf-project-card-body h4 {
-  margin: 0 0 0.3rem;
-  color: var(--sf-blue-dark);
-  font-size: 1rem;
-}
-
-.sf-project-card-body p {
-  margin: 0;
-  font-size: 0.82rem;
-  color: var(--sf-gray);
-}
-
-/* ---------- Accordion (nonwork page) ---------- */
-
-.sf-accordion-item {
-  border: 1px solid #e5e5e5;
-  border-radius: var(--sf-radius);
-  margin-bottom: 0.75rem;
-  overflow: hidden;
-  background: var(--sf-white);
-}
-
-.sf-accordion-trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background: none;
-  border: none;
-  padding: 1rem 1.25rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--sf-blue-dark);
-  text-align: left;
-}
-
-.sf-accordion-trigger:hover {
-  background-color: var(--sf-blue-pale);
-}
-
-.sf-accordion-trigger .sf-chevron {
-  transition: transform 0.2s ease;
-  color: var(--sf-blue);
-}
-
-.sf-accordion-item.is-open .sf-chevron {
-  transform: rotate(180deg);
-}
-
-.sf-accordion-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease;
-  padding: 0 1.25rem;
-}
-
-.sf-accordion-item.is-open .sf-accordion-panel {
-  max-height: 800px;
-  padding: 0 1.25rem 1.25rem;
-}
-
-.sf-accordion-panel p {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: #3a3a3a;
-}
-
 /* ---------- Contact form ---------- */
 
 .sf-form-group {
@@ -768,10 +689,6 @@ img {
     justify-items: center;
   }
 
-  .sf-contact-pills {
-    justify-content: center;
-  }
-
   .sf-grid-2,
   .sf-grid-3,
   .sf-two-col {
@@ -819,9 +736,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
-  gap: 2.5rem;
-  padding: 1rem 0 2.5rem;
+  align-items: center;
+  gap: 4rem;
+  min-height: 55vh;
 }
 
 .sf-orbit-item {
@@ -837,13 +754,18 @@ img {
 }
 
 .sf-orbit-item img {
-  width: 5.5rem;
+  display: block;
+  width: 6rem;
   transition: transform 0.2s ease;
   filter: drop-shadow(0 6px 10px rgba(3, 45, 96, 0.25));
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .sf-orbit-item:hover img {
-  transform: scale(1.12);
+  animation-play-state: paused;
+  transform: scale(1.15);
 }
 
 .sf-orbit-item span {
@@ -854,6 +776,38 @@ img {
   border-radius: 999px;
   padding: 0.25rem 0.8rem;
 }
+
+@keyframes sf-drift-moon {
+  0%, 100% { transform: translate(-45px, -10px); }
+  50% { transform: translate(45px, 15px); }
+}
+
+@keyframes sf-drift-star {
+  0%, 100% { transform: translate(-30px, 20px) rotate(-12deg); }
+  50% { transform: translate(30px, -20px) rotate(12deg); }
+}
+
+@keyframes sf-drift-balance {
+  0%, 100% { transform: translateY(-60px); }
+  50% { transform: translateY(60px); }
+}
+
+@keyframes sf-drift-hobbies {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-35px, 40px); }
+}
+
+@keyframes sf-drift-ship {
+  0% { transform: translate(-70px, 10px); }
+  50% { transform: translate(70px, -25px); }
+  100% { transform: translate(-70px, 10px); }
+}
+
+.sf-orbit-item--moon img { animation-name: sf-drift-moon; }
+.sf-orbit-item--star img { animation-name: sf-drift-star; animation-duration: 4.5s; }
+.sf-orbit-item--balance img { animation-name: sf-drift-balance; animation-duration: 8s; }
+.sf-orbit-item--hobbies img { animation-name: sf-drift-hobbies; animation-duration: 6s; }
+.sf-orbit-item--contact img { animation-name: sf-drift-ship; animation-duration: 9s; }
 
 /* Lightweight modal (no framework dependency) */
 
@@ -883,7 +837,7 @@ img {
   background: var(--sf-white);
   border-radius: 1rem;
   box-shadow: var(--sf-shadow-lg);
-  max-width: 540px;
+  max-width: 760px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
@@ -959,9 +913,21 @@ img {
 @media (max-width: 600px) {
   .sf-orbit {
     gap: 1.5rem;
+    min-height: 40vh;
   }
 
   .sf-orbit-item img {
     width: 4.2rem;
   }
+}
+
+/* ---------- Contact gif ---------- */
+
+.sf-contact-gif {
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  border: none;
+  margin: 0 auto 1.5rem;
+  display: block;
 }
