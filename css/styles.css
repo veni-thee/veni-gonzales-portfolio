@@ -585,6 +585,7 @@ img {
 
 .sf-form-group {
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .sf-form-group label {
@@ -603,6 +604,7 @@ img {
   padding: 0.6rem 0.75rem;
   font-size: 0.9rem;
   font-family: inherit;
+  text-align: left;
 }
 
 .sf-input:focus,
@@ -767,6 +769,10 @@ body.nonwork-body {
   padding: 0.85rem 1.5rem;
 }
 
+.sf-space-bg {
+  background: linear-gradient(160deg, #0b1f45 0%, #1c1147 55%, #2c0f3d 100%);
+}
+
 .sf-orbit-section {
   flex: 1 1 auto;
   min-height: 0;
@@ -776,7 +782,6 @@ body.nonwork-body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(160deg, #0b1f45 0%, #1c1147 55%, #2c0f3d 100%);
   padding: 1rem 1.5rem;
 }
 
@@ -815,12 +820,34 @@ body.nonwork-body {
   to   { transform: rotate(-360deg) translateX(8px) rotate(360deg); }
 }
 
-.sf-orbit-canvas {
+.sf-canvas-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+
+/* About page: dark space background behind the info cards */
+
+.sf-about-bg-wrap {
+  position: relative;
+}
+
+.sf-about-bg-wrap > .sf-space-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sf-about-bg-wrap > .sf-container {
+  position: relative;
+  z-index: 1;
+}
+
+.sf-about-bg-wrap .sf-section-title {
+  color: var(--sf-white);
 }
 
 .sf-orbit {

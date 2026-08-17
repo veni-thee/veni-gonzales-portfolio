@@ -5,12 +5,7 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function createStars() {
-    var field = document.getElementById("star-field");
-    if (!field) {
-      return;
-    }
-
+  function createStars(field) {
     var width = field.clientWidth;
     var height = field.clientHeight;
     var direction = "sf-star--right";
@@ -31,19 +26,21 @@
     field.innerHTML = html;
   }
 
-  function init() {
-    createStars();
+  function createAllStarFields() {
+    document.querySelectorAll(".sf-star-field").forEach(function (field) {
+      createStars(field);
+    });
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", createAllStarFields);
   } else {
-    init();
+    createAllStarFields();
   }
 
   var resizeTimer;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(createStars, 250);
+    resizeTimer = setTimeout(createAllStarFields, 250);
   });
 })();
