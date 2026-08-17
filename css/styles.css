@@ -763,13 +763,6 @@ body.nonwork-body {
   font-size: 0.9rem;
 }
 
-.nonwork-body .sf-container {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  padding: 0;
-}
-
 .nonwork-body .sf-footer {
   padding: 0.85rem 1.5rem;
 }
@@ -787,11 +780,47 @@ body.nonwork-body {
   padding: 1rem 1.5rem;
 }
 
+.sf-star-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sf-star {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.sf-star--right {
+  animation-name: sf-star-move-right;
+}
+
+.sf-star--left {
+  animation-name: sf-star-move-left;
+}
+
+@keyframes sf-star-move-right {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@keyframes sf-star-move-left {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(8px) rotate(360deg); }
+}
+
 .sf-orbit-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 .sf-orbit {
@@ -940,7 +969,7 @@ body.nonwork-body {
 
 .sf-modal-media {
   width: 100%;
-  max-width: 260px;
+  max-width: 110px;
   border-radius: var(--sf-radius);
   display: block;
   margin: 0 auto 1rem;

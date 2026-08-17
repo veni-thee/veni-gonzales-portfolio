@@ -41,33 +41,32 @@
     </div>
   </header>
 
-  <div class="sf-container">
-    <section class="sf-orbit-section" id="orbit-bg">
-      <canvas id="orbit-canvas" class="sf-orbit-canvas"></canvas>
-      <div class="sf-orbit animate__animated animate__fadeIn">
-        <button class="sf-orbit-item sf-orbit-item--moon" type="button" data-modal-open="modal-learning">
-          <img src="images/moon.png" alt="Moon">
-          <span>Continuous Learning</span>
-        </button>
-        <button class="sf-orbit-item sf-orbit-item--star" type="button" data-modal-open="modal-quote">
-          <img src="images/star.png" alt="Star">
-          <span>Favorite Quote</span>
-        </button>
-        <button class="sf-orbit-item sf-orbit-item--balance" type="button" data-modal-open="modal-balance">
-          <img src="images/planet2.png" alt="Planet">
-          <span>Work-Life Balance</span>
-        </button>
-        <button class="sf-orbit-item sf-orbit-item--hobbies" type="button" data-modal-open="modal-hobbies">
-          <img src="images/planet3.png" alt="Planet">
-          <span>Hobbies</span>
-        </button>
-        <button class="sf-orbit-item sf-orbit-item--contact" type="button" data-modal-open="modal-contact">
-          <img src="images/spaceship.png" alt="Spaceship">
-          <span>Contact Me</span>
-        </button>
-      </div>
-    </section>
-  </div>
+  <section class="sf-orbit-section" id="orbit-bg">
+    <div class="sf-star-field" id="star-field"></div>
+    <canvas id="orbit-canvas" class="sf-orbit-canvas"></canvas>
+    <div class="sf-orbit animate__animated animate__fadeIn">
+      <button class="sf-orbit-item sf-orbit-item--moon" type="button" data-modal-open="modal-learning">
+        <img src="images/moon.png" alt="Moon">
+        <span>Continuous Learning</span>
+      </button>
+      <button class="sf-orbit-item sf-orbit-item--star" type="button" data-modal-open="modal-quote">
+        <img src="images/star.png" alt="Star">
+        <span>Favorite Quote</span>
+      </button>
+      <button class="sf-orbit-item sf-orbit-item--balance" type="button" data-modal-open="modal-balance">
+        <img src="images/planet2.png" alt="Planet">
+        <span>Work-Life Balance</span>
+      </button>
+      <button class="sf-orbit-item sf-orbit-item--hobbies" type="button" data-modal-open="modal-hobbies">
+        <img src="images/planet3.png" alt="Planet">
+        <span>Hobbies</span>
+      </button>
+      <button class="sf-orbit-item sf-orbit-item--contact" type="button" data-modal-open="modal-contact">
+        <img src="images/spaceship.png" alt="Spaceship">
+        <span>Contact Me</span>
+      </button>
+    </div>
+  </section>
 
   <!-- Modal: Continuous Learning -->
   <div class="sf-modal-wrap" id="modal-learning">
@@ -164,6 +163,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/stars.js"></script>
   <script src="js/particles.js"></script>
 </body>
 </html>
