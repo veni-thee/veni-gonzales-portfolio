@@ -41,7 +41,13 @@
     </div>
   </header>
 
-  <div class="sf-container">
+  <div class="sf-page-bg-wrap">
+    <div class="sf-space-bg sf-particle-bg">
+      <div class="sf-star-field"></div>
+      <canvas class="sf-canvas-bg"></canvas>
+    </div>
+
+    <div class="sf-container">
 
     <section class="sf-section">
       <div class="sf-astro-wrap">
@@ -49,6 +55,7 @@
       </div>
       <h2 class="sf-section-title">Experience</h2>
 
+      <div class="sf-card sf-card--morph sf-timeline-card">
       <div class="sf-timeline">
 
         <div class="sf-timeline-item is-current">
@@ -256,9 +263,10 @@
         </div>
 
       </div>
+      </div>
     </section>
 
-    <section class="sf-section">
+    <section class="sf-section sf-section--center">
       <h2 class="sf-section-title">Certifications &amp; Credentials</h2>
       <div class="sf-cert-grid">
 
@@ -283,7 +291,7 @@
           <p>Salesforce Certified</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-cloud"><i class="fa fa-cogs"></i></div>
+          <img class="sf-cert-img" src="images/Badge_OmniStudio-Developer.png" alt="OmniStudio Developer badge">
           <h4>OmniStudio Developer</h4>
           <p>Salesforce Certified</p>
         </div>
@@ -293,7 +301,7 @@
           <p>Salesforce Certified</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-cloud"><i class="fa fa-user"></i></div>
+          <img class="sf-cert-img" src="images/Badge_SF-Certified_Associate.png" alt="Associate badge">
           <h4>Associate</h4>
           <p>Salesforce Certified</p>
         </div>
@@ -308,12 +316,12 @@
           <p>Salesforce Certified</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-cloud"><i class="fa fa-user-circle-o"></i></div>
+          <img class="sf-cert-img" src="images/Badge_SF-Certified_Administrator.png" alt="Administrator badge">
           <h4>Administrator</h4>
           <p>Salesforce Certified</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-cloud"><i class="fa fa-shield"></i></div>
+          <img class="sf-cert-img" src="images/Badge_SF-Certified_AdvAdministrator.png" alt="Advanced Administrator badge">
           <h4>Advanced Administrator</h4>
           <p>Salesforce Certified</p>
         </div>
@@ -328,12 +336,12 @@
           <p>Salesforce Community</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-belt"><i class="fa fa-leaf"></i></div>
+          <img class="sf-cert-img" src="images/ssgb.png" alt="Lean Six Sigma Green Belt badge">
           <h4>Lean Six Sigma Green Belt</h4>
           <p>Certified</p>
         </div>
         <div class="sf-cert-tile">
-          <div class="sf-cert-badge is-belt is-yellow"><i class="fa fa-certificate"></i></div>
+          <img class="sf-cert-img" src="images/ssyb.png" alt="Six Sigma Yellow Belt badge">
           <h4>Six Sigma Yellow Belt</h4>
           <p>Certified</p>
         </div>
@@ -341,25 +349,57 @@
       </div>
     </section>
 
-    <section class="sf-section">
+    <section class="sf-section sf-section--center">
       <h2 class="sf-section-title">Bootcamps &amp; Apprenticeship</h2>
-      <div class="sf-two-col">
-        <div class="sf-card">
-          <h4 style="margin-top:0; color:var(--sf-blue-dark);">Salesforce Administrator and Developer Bootcamp</h4>
-          <p style="color:var(--sf-gray); font-size:.85rem; margin-top:-.5rem;">Jul 2022 – Sep 2022</p>
-          <p style="font-size:.9rem;">Covered LWC, Apex Classes, Triggers, Handlers, Test Classes, best practices, User Management, Data Modeling, UI Configuration, Data Management &amp; Analytics, Automation, and Data Security.</p>
+      <div class="sf-carousel">
+        <div class="sf-carousel-track-wrap">
+          <div class="sf-carousel-track">
+
+            <div class="sf-carousel-slide">
+              <div class="sf-carousel-card">
+                <div class="sf-carousel-icon"><i class="fa fa-graduation-cap"></i></div>
+                <h4>Salesforce Administrator and Developer Bootcamp</h4>
+                <p class="sf-carousel-date">Jul 2022 – Sep 2022</p>
+                <p>Covered LWC, Apex Classes, Triggers, Handlers, Test Classes, best practices, User Management, Data Modeling, UI Configuration, Data Management &amp; Analytics, Automation, and Data Security.</p>
+              </div>
+            </div>
+
+            <div class="sf-carousel-slide">
+              <div class="sf-carousel-card">
+                <div class="sf-carousel-icon"><i class="fa fa-plug"></i></div>
+                <h4>MuleSoft Developer I Bootcamp</h4>
+                <p class="sf-carousel-date">Oct 2022 – Nov 2022</p>
+                <p>Anypoint Platform fundamentals: API-led connectivity, designing APIs with RAML, building and deploying APIs, consuming web services, error handling, DataWeave transformations, and Salesforce integration.</p>
+              </div>
+            </div>
+
+            <div class="sf-carousel-slide">
+              <div class="sf-carousel-card">
+                <div class="sf-carousel-icon"><i class="fa fa-rocket"></i></div>
+                <h4>Environment Management Apprenticeship Program</h4>
+                <p class="sf-carousel-date">Aug 2021 – Oct 2021</p>
+                <p>Covered Billing Systems, Batch Operations, Control-M, WebLogic, and other in-house tools. Absorbed as a full-time employee upon completion of the program.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="sf-card">
-          <h4 style="margin-top:0; color:var(--sf-blue-dark);">MuleSoft Developer I Bootcamp</h4>
-          <p style="color:var(--sf-gray); font-size:.85rem; margin-top:-.5rem;">Oct 2022 – Nov 2022</p>
-          <p style="font-size:.9rem;">Anypoint Platform fundamentals: API-led connectivity, designing APIs with RAML, building and deploying APIs, consuming web services, error handling, DataWeave transformations, and Salesforce integration.</p>
+        <div class="sf-carousel-controls">
+          <button class="sf-carousel-arrow sf-carousel-arrow--prev" type="button" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+          <div class="sf-carousel-dots">
+            <button class="sf-carousel-dot is-active" type="button" aria-label="Slide 1"></button>
+            <button class="sf-carousel-dot" type="button" aria-label="Slide 2"></button>
+            <button class="sf-carousel-dot" type="button" aria-label="Slide 3"></button>
+          </div>
+          <button class="sf-carousel-arrow sf-carousel-arrow--next" type="button" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
 
-    <section class="sf-section sf-section--tinted">
+    <section class="sf-section sf-section--center">
       <h2 class="sf-section-title">Skills &amp; Abilities</h2>
 
+      <div class="sf-card sf-card--morph">
       <div class="sf-skill-group">
         <h4><i class="fa fa-cloud"></i> Salesforce Platform</h4>
         <div class="sf-skill-pills">
@@ -411,8 +451,10 @@
           <span class="sf-skill-pill">Trainable &amp; avid learner</span>
         </div>
       </div>
+      </div>
     </section>
 
+    </div>
   </div>
 
   <footer class="sf-footer">
@@ -422,6 +464,9 @@
     <small>&copy; 2026 Veni Di Gonzales. All rights reserved.</small>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/stars.js"></script>
+  <script src="js/particles.js"></script>
 </body>
 </html>

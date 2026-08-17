@@ -473,8 +473,9 @@ img {
 /* ---------- Certification tiles ---------- */
 
 .sf-cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -486,6 +487,7 @@ img {
   text-align: center;
   box-shadow: var(--sf-shadow);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  flex: 0 1 210px;
 }
 
 .sf-cert-tile:hover {
@@ -522,6 +524,13 @@ img {
   background: linear-gradient(135deg, var(--sf-orange), var(--sf-orange-dark));
 }
 
+.sf-cert-img {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto 0.7rem;
+  object-fit: contain;
+}
+
 .sf-cert-tile h4 {
   font-size: 0.92rem;
   font-weight: 700;
@@ -548,12 +557,14 @@ img {
   margin: 0 0 0.6rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 }
 
 .sf-skill-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -645,12 +656,113 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- Certifications marquee-free carousel (bootcamps etc.) ---------- */
+/* ---------- Carousel (bootcamps & apprenticeship) ---------- */
 
-.sf-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.sf-carousel {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.sf-carousel-track-wrap {
+  overflow: hidden;
+}
+
+.sf-carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.sf-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 0.25rem;
+}
+
+.sf-carousel-card {
+  background: var(--sf-white);
+  border: 1px solid #e5e5e5;
+  border-radius: var(--sf-radius);
+  box-shadow: var(--sf-shadow);
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+
+.sf-carousel-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sf-blue-light), var(--sf-blue-dark));
+  color: var(--sf-white);
+  font-size: 1.6rem;
+}
+
+.sf-carousel-card h4 {
+  margin: 0 0 0.3rem;
+  color: var(--sf-blue-dark);
+  font-size: 1.2rem;
+}
+
+.sf-carousel-card .sf-carousel-date {
+  color: var(--sf-gray);
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.sf-carousel-card p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sf-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.sf-carousel-arrow {
+  background: var(--sf-white);
+  border: 1.5px solid var(--sf-blue);
+  color: var(--sf-blue);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sf-carousel-arrow:hover {
+  background-color: var(--sf-blue);
+  color: var(--sf-white);
+}
+
+.sf-carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sf-carousel-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: #cfd7e6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sf-carousel-dot.is-active {
+  background-color: var(--sf-blue);
 }
 
 /* ---------- Utility ---------- */
@@ -692,8 +804,7 @@ img {
   }
 
   .sf-grid-2,
-  .sf-grid-3,
-  .sf-two-col {
+  .sf-grid-3 {
     grid-template-columns: 1fr;
   }
 
@@ -828,26 +939,36 @@ body.nonwork-body {
   z-index: 0;
 }
 
-/* About page: dark space background behind the info cards */
+/* Space background behind the info cards (About, Work) */
 
-.sf-about-bg-wrap {
+.sf-page-bg-wrap {
   position: relative;
 }
 
-.sf-about-bg-wrap > .sf-space-bg {
+.sf-page-bg-wrap > .sf-space-bg {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 0;
 }
 
-.sf-about-bg-wrap > .sf-container {
+.sf-page-bg-wrap > .sf-container {
   position: relative;
   z-index: 1;
 }
 
-.sf-about-bg-wrap .sf-section-title {
+.sf-page-bg-wrap .sf-section-title {
   color: var(--sf-white);
+}
+
+/* Card that morphs its border-radius on hover */
+
+.sf-card--morph {
+  transition: border-radius 0.5s ease;
+}
+
+.sf-card--morph:hover {
+  border-radius: 2.5rem 0.5rem 2.5rem 0.5rem / 0.5rem 2.5rem 0.5rem 2.5rem;
 }
 
 .sf-orbit {
