@@ -672,6 +672,16 @@ img {
   text-align: center;
 }
 
+body.thank-you-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thank-you-body .sf-footer {
+  margin-top: auto;
+}
+
 .sf-footer-links {
   display: flex;
   justify-content: center;
